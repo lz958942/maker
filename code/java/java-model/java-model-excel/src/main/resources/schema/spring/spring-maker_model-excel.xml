@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <!-- 替换字典 -->
+    <bean id="dictionary" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+        <property name="locations">
+            <list>
+                <!-- 这里支持多种寻址方式：classpath和file -->
+                <value>classpath*:config/replace.dic</value>
+                <!-- 推荐使用file的方式引入，这样可以将配置和代码分离
+                <value>file:/opt/demo/config/demo-mq.properties</value>
+                <value>file:/opt/demo/config/demo-remote.properties</value>-->
+            </list>
+        </property>
+    </bean>
+
+    <!-- 配置 -->
+    <bean id="configuration" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+        <property name="fileEncoding" value="UTF-8"/>
+        <property name="locations">
+            <list>
+                <value>classpath*:config/configuration.properties</value>
+                <value>classpath*:config/configuration-excel.properties</value>
+            </list>
+        </property>
+    </bean>
+
+    <!-- 配置工厂 -->
+    <bean id="propertiesConfigurationFactory"
+          class="net.lizhaoweb.maker.code.java.model.excel.read.PropertiesConfigurationFactory">
+        <constructor-arg name="location" ref="configuration"/>
+        <constructor-arg name="dictionary" ref="dictionary"/>
+    </bean>
+
+    <!-- Excel 文件读取器 -->
+    <bean id="excelFileReader" class="net.lizhaoweb.maker.code.java.model.excel.read.ExcelFileReader">
+        <constructor-arg name="configurationFactory" ref="propertiesConfigurationFactory"/>
+        <property name="translator" ref="baiDuTranslator"/>
+        <property name="generator" ref="javaModelGenerator"/>
+    </bean>
+
+</beans>
