@@ -13,7 +13,7 @@ package net.lizhaoweb.maker.code.java.model.read;
 import net.lizhaoweb.maker.code.java.model.bean.Configuration;
 
 /**
- * <h>接口 - 配置工厂</h>
+ * <h1>接口 - 配置工厂</h1>
  *
  * @author <a href="http://www.lizhaoweb.cn">李召(John.Lee)</a>
  * @version 1.0.0.0.1

@@ -16,7 +16,7 @@ import net.lizhaoweb.maker.code.java.model.bean.Configuration;
 import java.util.Set;
 
 /**
- * <h>接口 - 生成器</h>
+ * <h1>接口 - 生成器</h1>
  *
  * @author <a href="http://www.lizhaoweb.cn">李召(John.Lee)</a>
  * @version 1.0.0.0.1

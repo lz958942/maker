@@ -23,7 +23,7 @@ import java.util.Map;
 import java.util.Properties;
 
 /**
- * <h>实现[抽象] - 属性文件配置工厂</h>
+ * <h1>实现[抽象] - 属性文件配置工厂</h1>
  *
  * @author <a href="http://www.lizhaoweb.cn">李召(John.Lee)</a>
  * @version 1.0.0.0.1

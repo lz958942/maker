@@ -14,6 +14,8 @@ import java.util.Map;
 import java.util.concurrent.Callable;
 
 /**
+ * <h1>接口 - 多线程翻译回调</h1>
+ *
  * @author <a href="http://www.lizhaoweb.cn">李召(John.Lee)</a>
  * @version 1.0.0.0.1
  * @notes Created on 2016年11月13日<br>
